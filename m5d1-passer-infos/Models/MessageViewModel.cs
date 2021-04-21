@@ -5,8 +5,9 @@ using System.Web;
 
 namespace m5d1_passer_infos.Models
 {
-    public class MessageVM
+    public class MessageViewModel
     {
-        public string Message { get; set; }
+        public string Message1 { get; set; }
+        public string Message2 { get; set; }
     }
 }
