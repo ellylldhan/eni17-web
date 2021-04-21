@@ -1,0 +1,13 @@
+﻿@{
+    ViewBag.Title = "Welcome";
+}
+
+<h2>@ViewBag.Title</h2>
+
+
+
+@if (ViewBag.Nom != null && ViewBag.Prenom != null)
+{
+    <p>@ViewBag.Prenom @ViewBag.Nom</p>
+}
+
