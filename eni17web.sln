@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "m5d1-passer-infos", "m5d1-p
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "tp3-chats", "tp3-chats\tp3-chats.csproj", "{4EB12BAF-FB61-4549-978D-E4653ADA6FBF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "m5d2-partials", "m5d2-partials\m5d2-partials.csproj", "{0F96985E-9FC9-40AD-9666-686D5E477326}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{4EB12BAF-FB61-4549-978D-E4653ADA6FBF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4EB12BAF-FB61-4549-978D-E4653ADA6FBF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4EB12BAF-FB61-4549-978D-E4653ADA6FBF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0F96985E-9FC9-40AD-9666-686D5E477326}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0F96985E-9FC9-40AD-9666-686D5E477326}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0F96985E-9FC9-40AD-9666-686D5E477326}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0F96985E-9FC9-40AD-9666-686D5E477326}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
