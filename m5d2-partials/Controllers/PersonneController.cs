@@ -47,16 +47,24 @@ namespace m5d2_partials.Controllers
         // GET: Personne/Edit/5
         public ActionResult Edit(int id)
         {
-            return View();
+            PersonneViewModel vm = new PersonneViewModel();
+            vm.Personne = FakeDb.Instance.Personnes.FirstOrDefault(x => x.Id == id);
+            vm.Id = vm.Personne.Id;
+            vm.Age = vm.Personne.Age;
+
+            return View(vm);
         }
 
         // POST: Personne/Edit/5
         [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
+        public ActionResult Edit(int id, FormCollection collection, PersonneViewModel vm)
         {
             try
             {
-                // TODO: Add update logic here
+                Personne toUpdate = FakeDb.Instance.Personnes.FirstOrDefault(x => x.Id == id);
+                toUpdate.Nom = vm.Personne.Nom;
+                toUpdate.Prenom = vm.Personne.Prenom;
+                toUpdate.Age = (vm.Age.HasValue) ? vm.Personne.Age : 0; 
 
                 return RedirectToAction("Index");
             }
