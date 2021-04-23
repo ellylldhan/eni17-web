@@ -11,6 +11,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "tp3-chats", "tp3-chats\tp3-
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "m5d2-partials", "m5d2-partials\m5d2-partials.csproj", "{0F96985E-9FC9-40AD-9666-686D5E477326}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "tp4-pizzas-v1", "tp4-pizzas-v1\tp4-pizzas-v1.csproj", "{AF692563-407D-4F83-83FE-367FDF6062C6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PizzaClassLibrary", "PizzaClassLibrary\PizzaClassLibrary.csproj", "{86FDCF09-97F0-4EE8-90E9-53BF044508C7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +37,14 @@ Global
 		{0F96985E-9FC9-40AD-9666-686D5E477326}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0F96985E-9FC9-40AD-9666-686D5E477326}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0F96985E-9FC9-40AD-9666-686D5E477326}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AF692563-407D-4F83-83FE-367FDF6062C6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AF692563-407D-4F83-83FE-367FDF6062C6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AF692563-407D-4F83-83FE-367FDF6062C6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AF692563-407D-4F83-83FE-367FDF6062C6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{86FDCF09-97F0-4EE8-90E9-53BF044508C7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{86FDCF09-97F0-4EE8-90E9-53BF044508C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{86FDCF09-97F0-4EE8-90E9-53BF044508C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{86FDCF09-97F0-4EE8-90E9-53BF044508C7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
