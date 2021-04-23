@@ -34,7 +34,7 @@ namespace tp4_pizzas_v1.Controllers
 
         // POST: Pizza/Create
         [HttpPost]
-        public ActionResult Create(FormCollection collection)
+        public ActionResult Create(PizzaViewModel vm)
         {
             try
             {
