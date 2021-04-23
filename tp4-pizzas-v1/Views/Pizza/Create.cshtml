@@ -1,4 +1,4 @@
-﻿@model PizzaClassLibrary.Entities.Pizza
+﻿@model tp4_pizzas_v1.Models.PizzaViewModel
 
 @{
     ViewBag.Title = "Create";
@@ -7,21 +7,37 @@
 <h2>Create</h2>
 
 
-@using (Html.BeginForm()) 
+@using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-    
+
     <div class="form-horizontal">
         <h4>Pizza</h4>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         <div class="form-group">
-            @Html.LabelFor(model => model.Nom, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.Pizza.Nom, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.Nom, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Nom, "", new { @class = "text-danger" })
+                @Html.EditorFor(model => model.Pizza.Nom, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Pizza.Nom, "", new { @class = "text-danger" })
             </div>
         </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.Pizza.Pate, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownListFor(model => model.Pizza.Pate.Id, Model.Pates
+               .Select(x => new SelectListItem() { Text = x.Nom, Value = x.Id.ToString() }), "Selectionner une pâte")
+                @Html.ValidationMessageFor(model => model.Pizza.Id, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.Pizza.Ingredients, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.ListBoxFor(model => model.Pizza.Ingredients, Model.Ingredients.Select(x => new SelectListItem() { Text = x.Nom, Value = x.Id.ToString() }), "Selectionner un ou plusieurs ingrédients")
+                @Html.ValidationMessageFor(model => model.Ingredients, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
