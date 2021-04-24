@@ -12,5 +12,8 @@ namespace tp4_pizzas_v1.Models
         public List<Pate> Pates { get; set; }
         public List<Ingredient> Ingredients { get; set; }
 
+        // Ajouté pour Create
+        public List<int> IngredientIds { get; set; }
+
     }
 }

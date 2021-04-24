@@ -1,4 +1,5 @@
-﻿using PizzaClassLibrarys.Utils;
+﻿using PizzaClassLibrary.Entities;
+using PizzaClassLibrarys.Utils;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -38,7 +39,18 @@ namespace tp4_pizzas_v1.Controllers
         {
             try
             {
-                // TODO: Add insert logic here
+                // Recupère pate avec meme id que pate de pizza
+                vm.Pizza.Pate = FakeDb.Instance.Pates.FirstOrDefault(x => x.Id == vm.Pizza.Pate.Id);
+
+                // Récupère tous les ingredients dont l'id a ete stocke dans la 
+                // liste des id des ingredients que je souhaite récupérer
+                vm.Pizza.Ingredients = FakeDb.Instance.Ingredients.Where(x => vm.IngredientIds.Contains(x.Id)).ToList();
+
+                // Definir un nouvel id
+                vm.Pizza.Id = FakeDb.Instance.Pizzas.Max(x => x.Id) + 1;
+
+                // On stocke la pizza dans la FakeDb
+                FakeDb.Instance.Pizzas.Add(vm.Pizza);
 
                 return RedirectToAction("Index");
             }
@@ -54,9 +66,10 @@ namespace tp4_pizzas_v1.Controllers
             PizzaViewModel vm = new PizzaViewModel();
             vm.Pizza = FakeDb.Instance.Pizzas.FirstOrDefault(x => x.Id == id);
             vm.Pates = FakeDb.Instance.Pates;
-            vm.Ingredients = FakeDb.Instance.Ingredients.Select(x => new SelectListItem() { Text = x.Nom, Value = x.Id.ToString()}).ToList();
+            vm.Ingredients = FakeDb.Instance.Ingredients.Select(x => new SelectListItem() { Text = x.Nom, Value = x.Id.ToString() }).ToList();
 
-            if(vm.Pizza.Ingredients != null && vm.Pizza.Ingredients.Count > 0) {
+            if (vm.Pizza.Ingredients != null && vm.Pizza.Ingredients.Count > 0)
+            {
                 vm.IngredientIds = vm.Pizza.Ingredients.Select(x => x.Id).ToList();
             }
 
@@ -82,7 +95,7 @@ namespace tp4_pizzas_v1.Controllers
         // GET: Pizza/Delete/5
         public ActionResult Delete(int id)
         {
-            Pizza pizza = FakeDb.Instance.Pizzas.SingleOrDefault(x=>x.Id==id);
+            Pizza pizza = FakeDb.Instance.Pizzas.SingleOrDefault(x => x.Id == id);
             return View(pizza);
         }
 
@@ -90,7 +103,7 @@ namespace tp4_pizzas_v1.Controllers
         [HttpPost]
         public ActionResult Delete(int id, FormCollection collection)
         {
-                        try
+            try
             {
                 Pizza pizza = FakeDb.Instance.Pizzas.SingleOrDefault(x => x.Id == id);
                 FakeDb.Instance.Pizzas.Remove(pizza);
@@ -104,12 +117,15 @@ namespace tp4_pizzas_v1.Controllers
             }
         }
 
-        private bool OtherValidations(ModelStateDictionary modelState, PizzaViewModel vm) {
-            if(FakeDb.Instance.Pizzas.Any(x=>x.Nom.Equals(vm.PizzaViewModel.Nom) && vm.PizzaViewModel.Id != x.Id)) {
+        private bool OtherValidations(ModelStateDictionary modelState, PizzaViewModel vm)
+        {
+            if (FakeDb.Instance.Pizzas.Any(x => x.Nom.Equals(vm.Pizza.Nom) && vm.Pizza.Id != x.Id))
+            {
                 modelState.AddModelError("Pizza.Nom", "Il existe déjà une pizza avec ce nom");
             }
 
-            if(FakeDb.Instance.Pizzas.Distinct().Any(x=>x.Ingredients.Select(y=>y.Id).Distinct().OrderBy(z=>z).SequenceEqual(vm.IngredientIds.Distinct().OrderBy(z=>z)) && vm.Pizza.Id != x.Id)) {
+            if (FakeDb.Instance.Pizzas.Distinct().Any(x => x.Ingredients.Select(y => y.Id).Distinct().OrderBy(z => z).SequenceEqual(vm.IngredientIds.Distinct().OrderBy(z => z)) && vm.Pizza.Id != x.Id))
+            {
                 modelState.AddModelError("IngredientIds", "Il existe déjà une pizza avec ces ingrédients");
             }
 

@@ -33,7 +33,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.Pizza.Ingredients, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.ListBoxFor(model => model.Pizza.Ingredients, Model.Ingredients.Select(x => new SelectListItem() { Text = x.Nom, Value = x.Id.ToString() }), "Selectionner un ou plusieurs ingrédients")
+                @Html.ListBoxFor(model => model.IngredientIds, Model.Ingredients.Select(x => new SelectListItem() { Text = x.Nom, Value = x.Id.ToString() }), "Selectionner un ou plusieurs ingrédients")
                 @Html.ValidationMessageFor(model => model.Ingredients, "", new { @class = "text-danger" })
             </div>
         </div>
