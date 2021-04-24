@@ -1,5 +1,5 @@
 ﻿using PizzaClassLibrary.Entities;
-using PizzaClassLibrarys.Utils;
+using PizzaClassLibrary.Utils;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -56,8 +56,8 @@ namespace tp4_pizzas_v1.Controllers
             }
             catch
             {
-                vm.Pates = FakeDb.Instance.Pates;
                 vm.Ingredients = FakeDb.Instance.Ingredients.Select(x => new SelectListItem() { Text = x.Nom, Value = x.Id.ToString() }).ToList();
+                vm.Pates = FakeDb.Instance.Pates;
 
                 return View(vm);
             }
@@ -67,9 +67,9 @@ namespace tp4_pizzas_v1.Controllers
         public ActionResult Edit(int id)
         {
             PizzaViewModel vm = new PizzaViewModel();
-            vm.Pizza = FakeDb.Instance.Pizzas.FirstOrDefault(x => x.Id == id);
-            vm.Pates = FakeDb.Instance.Pates;
             vm.Ingredients = FakeDb.Instance.Ingredients.Select(x => new SelectListItem() { Text = x.Nom, Value = x.Id.ToString() }).ToList();
+            vm.Pates = FakeDb.Instance.Pates;
+            vm.Pizza = FakeDb.Instance.Pizzas.SingleOrDefault(x => x.Id == id);
 
             if (vm.Pizza.Ingredients != null && vm.Pizza.Ingredients.Count > 0)
             {
@@ -79,19 +79,35 @@ namespace tp4_pizzas_v1.Controllers
             return View(vm);
         }
 
+
         // POST: Pizza/Edit/5
         [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
+        public ActionResult Edit(int id, PizzaViewModel vm)
         {
-            try
+            if (this.OtherValidations(ModelState, vm))
             {
-                // TODO: Add update logic here
+                try
+                {
+                    Pizza toUpdate = FakeDb.Instance.Pizzas.SingleOrDefault(x => x.Id == vm.Pizza.Id);
 
-                return RedirectToAction("Index");
+                    toUpdate.Pate = FakeDb.Instance.Pates.SingleOrDefault(x => x.Id == vm.Pizza.Pate.Id);
+                    toUpdate.Ingredients = FakeDb.Instance.Ingredients.Where(x => vm.IngredientIds.Contains(x.Id)).ToList();
+                    toUpdate.Nom = vm.Pizza.Nom;
+
+                    return RedirectToAction("Index");
+                }
+                catch
+                {
+                    vm.Ingredients = FakeDb.Instance.Ingredients.Select(x => new SelectListItem() { Text = x.Nom, Value = x.Id.ToString() }).ToList();
+                    vm.Pates = FakeDb.Instance.Pates;
+                    return View(vm);
+                }
             }
-            catch
+            else
             {
-                return View();
+                vm.Ingredients = FakeDb.Instance.Ingredients.Select(x => new SelectListItem() { Text = x.Nom, Value = x.Id.ToString() }).ToList();
+                vm.Pates = FakeDb.Instance.Pates;
+                return View(vm);
             }
         }
 
@@ -127,7 +143,16 @@ namespace tp4_pizzas_v1.Controllers
                 modelState.AddModelError("Pizza.Nom", "Il existe déjà une pizza avec ce nom");
             }
 
-            if (FakeDb.Instance.Pizzas.Distinct().Any(x => x.Ingredients.Select(y => y.Id).Distinct().OrderBy(z => z).SequenceEqual(vm.IngredientIds.Distinct().OrderBy(z => z)) && vm.Pizza.Id != x.Id))
+            if (FakeDb.Instance.Pizzas
+                    .Distinct()
+                    .Any(x => x.Ingredients
+                        .Select(y => y.Id)
+                        .Distinct()
+                        .OrderBy(z => z)
+                        .SequenceEqual(vm.IngredientIds
+                            .Distinct()
+                            .OrderBy(z => z)) 
+                && vm.Pizza.Id != x.Id))
             {
                 modelState.AddModelError("IngredientIds", "Il existe déjà une pizza avec ces ingrédients");
             }

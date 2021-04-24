@@ -2,23 +2,25 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace PizzaClassLibrarys.Utils
+namespace PizzaClassLibrary.Utils
 {
     public class FakeDb
     {
         private static readonly Lazy<FakeDb> lazy = new Lazy<FakeDb>(() => new FakeDb());
 
         public static FakeDb Instance { get { return lazy.Value; } }
-        public List<Pizza> Pizzas { get; set; }
-        public List<Ingredient> Ingredients { get; set; }
-        public List<Pate> Pates { get; set; }
 
         private FakeDb()
         {
             this.InitialiserDatas();
         }
+
+        public List<Pizza> Pizzas { get; set; } = new List<Pizza>();
+        public List<Ingredient> Ingredients { get; set; }
+        public List<Pate> Pates { get; set; }
 
         private void InitialiserDatas()
         {
@@ -41,7 +43,22 @@ namespace PizzaClassLibrarys.Utils
                 new Pate{ Id=3,Nom="Pate épaisse, base crême"},
                 new Pate{ Id=4,Nom="Pate épaisse, base tomate"}
             };
+
+            Pizzas = new List<Pizza>
+            {
+                new Pizza{ Id=1, Nom="Pizza 1", Pate = Pates.ElementAt(1), Ingredients = new List<Ingredient>
+                {
+                    Ingredients.ElementAt(0),
+                    Ingredients.ElementAt(1),
+                    Ingredients.ElementAt(4),
+                } },
+                new Pizza{ Id=2, Nom="Pizza 2", Pate = Pates.ElementAt(3), Ingredients = new List<Ingredient>
+                {
+                    Ingredients.ElementAt(5),
+                    Ingredients.ElementAt(2),
+                    Ingredients.ElementAt(4),
+                } }
+            };
         }
     }
 }
-
