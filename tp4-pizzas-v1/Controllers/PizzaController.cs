@@ -51,8 +51,16 @@ namespace tp4_pizzas_v1.Controllers
         // GET: Pizza/Edit/5
         public ActionResult Edit(int id)
         {
+            PizzaViewModel vm = new PizzaViewModel();
+            vm.Pizza = FakeDb.Instance.Pizzas.FirstOrDefault(x => x.Id == id);
+            vm.Pates = FakeDb.Instance.Pates;
+            vm.Ingredients = FakeDb.Instance.Ingredients.Select(x => new SelectListItem() { Text = x.Nom, Value = x.Id.ToString()}).ToList();
 
-            return View();
+            if(vm.Pizza.Ingredients != null && vm.Pizza.Ingredients.Count > 0) {
+                vm.IngredientIds = vm.Pizza.Ingredients.Select(x => x.Id).ToList();
+            }
+
+            return View(vm);
         }
 
         // POST: Pizza/Edit/5
@@ -74,23 +82,38 @@ namespace tp4_pizzas_v1.Controllers
         // GET: Pizza/Delete/5
         public ActionResult Delete(int id)
         {
-            return View();
+            Pizza pizza = FakeDb.Instance.Pizzas.SingleOrDefault(x=>x.Id==id);
+            return View(pizza);
         }
 
         // POST: Pizza/Delete/5
         [HttpPost]
         public ActionResult Delete(int id, FormCollection collection)
         {
-            try
+                        try
             {
-                // TODO: Add delete logic here
+                Pizza pizza = FakeDb.Instance.Pizzas.SingleOrDefault(x => x.Id == id);
+                FakeDb.Instance.Pizzas.Remove(pizza);
 
                 return RedirectToAction("Index");
             }
             catch
             {
-                return View();
+                Pizza pizza = FakeDb.Instance.Pizzas.SingleOrDefault(x => x.Id == id);
+                return View(pizza);
             }
+        }
+
+        private bool OtherValidations(ModelStateDictionary modelState, PizzaViewModel vm) {
+            if(FakeDb.Instance.Pizzas.Any(x=>x.Nom.Equals(vm.PizzaViewModel.Nom) && vm.PizzaViewModel.Id != x.Id)) {
+                modelState.AddModelError("Pizza.Nom", "Il existe déjà une pizza avec ce nom");
+            }
+
+            if(FakeDb.Instance.Pizzas.Distinct().Any(x=>x.Ingredients.Select(y=>y.Id).Distinct().OrderBy(z=>z).SequenceEqual(vm.IngredientIds.Distinct().OrderBy(z=>z)) && vm.Pizza.Id != x.Id)) {
+                modelState.AddModelError("IngredientIds", "Il existe déjà une pizza avec ces ingrédients");
+            }
+
+            return modelState.IsValid;
         }
     }
 }

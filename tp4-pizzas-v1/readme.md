@@ -1,7 +1,7 @@
 # TP4 Pizza v1 (m5tp2)
 TP 02 du Module 5 - Razor
 
-***Durée estimée** : 1 à 3 heures*
+_**Durée estimée** : 1 à 3 heures_
 
 ### Objectifs
 Le but est de créer un site pour la gestion de pizzas
