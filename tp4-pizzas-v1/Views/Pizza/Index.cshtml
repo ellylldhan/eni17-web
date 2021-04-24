@@ -14,6 +14,12 @@
         <th>
             @Html.DisplayNameFor(model => model.Nom)
         </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Pate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Ingredients)
+        </th>
         <th></th>
     </tr>
     @if (Model != null)
@@ -23,6 +29,25 @@
             <tr>
                 <td>
                     @Html.DisplayFor(modelItem => item.Nom)
+                </td>
+                <td>
+                @*Si pas de nom de pate*@
+                @if (item.Pate != null) 
+                {
+                    @Html.DisplayFor(modelItem => item.Pate.Nom)
+                } else {
+                    @Html.Raw("Aucune pâte")
+                }
+                </td> 
+                <td>
+                @if(item.Ingredients != null)
+                {
+                    foreach (var ingredient in item.Ingredients) 
+                    {
+                        @Html.DisplayFor(modelItem => ingredient.Nom)
+                        <br/>
+                    }
+                }
                 </td>
                 <td>
                     @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |

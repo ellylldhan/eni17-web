@@ -40,14 +40,14 @@ namespace tp4_pizzas_v1.Controllers
             try
             {
                 // Recupère pate avec meme id que pate de pizza
-                vm.Pizza.Pate = FakeDb.Instance.Pates.FirstOrDefault(x => x.Id == vm.Pizza.Pate.Id);
+                vm.Pizza.Pate = FakeDb.Instance.Pates.SingleOrDefault(x => x.Id == vm.Pizza.Pate.Id);
 
                 // Récupère tous les ingredients dont l'id a ete stocke dans la 
                 // liste des id des ingredients que je souhaite récupérer
                 vm.Pizza.Ingredients = FakeDb.Instance.Ingredients.Where(x => vm.IngredientIds.Contains(x.Id)).ToList();
 
-                // Definir un nouvel id
-                vm.Pizza.Id = FakeDb.Instance.Pizzas.Max(x => x.Id) + 1;
+                // Definir un nouvel id (bancal parce que asynchronisme)
+                vm.Pizza.Id = (FakeDb.Instance.Pizzas.Count > 0) ? FakeDb.Instance.Pizzas.Max(x => x.Id) + 1 : 1;
 
                 // On stocke la pizza dans la FakeDb
                 FakeDb.Instance.Pizzas.Add(vm.Pizza);
@@ -56,7 +56,10 @@ namespace tp4_pizzas_v1.Controllers
             }
             catch
             {
-                return View();
+                vm.Pates = FakeDb.Instance.Pates;
+                vm.Ingredients = FakeDb.Instance.Ingredients.Select(x => new SelectListItem() { Text = x.Nom, Value = x.Id.ToString() }).ToList();
+
+                return View(vm);
             }
         }
 

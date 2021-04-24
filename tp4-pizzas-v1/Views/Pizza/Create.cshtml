@@ -25,16 +25,15 @@
         <div class="form-group">
             @Html.LabelFor(model => model.Pizza.Pate, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.DropDownListFor(model => model.Pizza.Pate.Id, Model.Pates
-               .Select(x => new SelectListItem() { Text = x.Nom, Value = x.Id.ToString() }), "Selectionner une pâte")
+                @Html.DropDownListFor(model => model.Pizza.Pate.Id, Model.Pates.Select(x => new SelectListItem() { Text = x.Nom, Value = x.Id.ToString() }), "Selectionner une pâte")
                 @Html.ValidationMessageFor(model => model.Pizza.Id, "", new { @class = "text-danger" })
             </div>
         </div>
         <div class="form-group">
             @Html.LabelFor(model => model.Pizza.Ingredients, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.ListBoxFor(model => model.IngredientIds, Model.Ingredients.Select(x => new SelectListItem() { Text = x.Nom, Value = x.Id.ToString() }), "Selectionner un ou plusieurs ingrédients")
-                @Html.ValidationMessageFor(model => model.Ingredients, "", new { @class = "text-danger" })
+                @Html.ListBoxFor(model => model.IngredientIds, Model.Ingredients, "Selectionner un ou plusieurs ingrédients")
+                @Html.ValidationMessageFor(model => model.Pizza.Ingredients, "", new { @class = "text-danger" })
             </div>
         </div>
 
