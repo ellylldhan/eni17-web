@@ -17,6 +17,6 @@ Durée : 1-3h
 
 
 
-(m5tp2-pizzas-v1.md)[m5tp2-pizzas-v1.md]
+[m5tp2-pizzas-v1.md](m5tp2-pizzas-v1.md)
 
-(m5tp3-pizzas-v2.md)[m5tp3-pizzas-v2.md]
+[m5tp3-pizzas-v2.md](m5tp3-pizzas-v2.md)
