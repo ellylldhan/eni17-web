@@ -20,14 +20,15 @@ namespace tp4_pizzas_v1.Controllers
         // GET: Pizza/Details/5
         public ActionResult Details(int id)
         {
-            return View(FakeDb.Instance.Pizzas.FirstOrDefault(x => x.Id == id));
+            Pizza pizza = FakeDb.Instance.Pizzas.SingleOrDefault(x => x.Id == id);
+            return View(pizza);
         }
 
         // GET: Pizza/Create
         public ActionResult Create()
         {
             PizzaViewModel vm = new PizzaViewModel();
-            vm.Ingredients = FakeDb.Instance.Ingredients;
+            vm.Ingredients = FakeDb.Instance.Ingredients.Select(x => new SelectListItem() { Text = x.Nom, Value = x.Id.ToString() }).ToList();
             vm.Pates = FakeDb.Instance.Pates;
 
             return View(vm);
@@ -37,6 +38,8 @@ namespace tp4_pizzas_v1.Controllers
         [HttpPost]
         public ActionResult Create(PizzaViewModel vm)
         {
+            if (this.OtherValidations(ModelState, vm)) 
+            {
             try
             {
                 // Recupère pate avec meme id que pate de pizza
@@ -59,6 +62,11 @@ namespace tp4_pizzas_v1.Controllers
                 vm.Ingredients = FakeDb.Instance.Ingredients.Select(x => new SelectListItem() { Text = x.Nom, Value = x.Id.ToString() }).ToList();
                 vm.Pates = FakeDb.Instance.Pates;
 
+                return View(vm);
+            }
+            } else {
+                vm.Ingredients = FakeDb.Instance.Ingredients.Select(x => new SelectListItem() { Text = x.Nom, Value = x.Id.ToString()}).ToList();
+                vm.Pates = FakeDb.Instance.Pates;
                 return View(vm);
             }
         }

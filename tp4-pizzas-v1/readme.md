@@ -1,5 +1,5 @@
 # TP4 Pizza v1 (m5tp2)
-TP 02 du Module 5 - Razor
+*TP 02 du Module 5 - Razor*
 
 _**Durée estimée** : 1 à 3 heures_
 
