@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "tp4-pizzas-v1", "tp4-pizzas
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PizzaClassLibrary", "PizzaClassLibrary\PizzaClassLibrary.csproj", "{86FDCF09-97F0-4EE8-90E9-53BF044508C7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "m5d4-forms", "m5d4-forms\m5d4-forms.csproj", "{6F41A64E-2479-459B-94E5-5DBEA6435ACB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +47,10 @@ Global
 		{86FDCF09-97F0-4EE8-90E9-53BF044508C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{86FDCF09-97F0-4EE8-90E9-53BF044508C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{86FDCF09-97F0-4EE8-90E9-53BF044508C7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6F41A64E-2479-459B-94E5-5DBEA6435ACB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6F41A64E-2479-459B-94E5-5DBEA6435ACB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6F41A64E-2479-459B-94E5-5DBEA6435ACB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6F41A64E-2479-459B-94E5-5DBEA6435ACB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
