@@ -12,7 +12,7 @@ namespace m5d4_forms.Models
         public int Id { get; set; }
 
         [Required]
-        [MyValidationAttribute]
+        [MyValidationAttribute("B")]
         public string Nom { get; set; }
 
         [StringLength(20, MinimumLength = 5)]
