@@ -1,4 +1,5 @@
 ﻿using System;
+using m5d4_forms.ValidationAttributes;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -11,6 +12,7 @@ namespace m5d4_forms.Models
         public int Id { get; set; }
 
         [Required]
+        [MyValidationAttribute]
         public string Nom { get; set; }
 
         [StringLength(20, MinimumLength = 5)]
