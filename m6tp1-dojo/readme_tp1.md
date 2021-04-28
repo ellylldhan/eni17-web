@@ -35,11 +35,6 @@ Vous pouvez maintenant **créer les contrôleurs**, soit par vous-mêmes, soit e
 
 ### Vues
 
-<style>
-
-.center{display:block;margin-left: auto;margin-right:auto;}
-
-</style>
 
 
 **Liste des Samouraïs** :
@@ -51,7 +46,9 @@ Vous pouvez maintenant **créer les contrôleurs**, soit par vous-mêmes, soit e
 <img src="../_img/m6tp1-2.png" alt="armes" title="Liste Armes" style="width:75%;border:2px solid black" class="center"/>
 
 
-### Aide du formateur
 
-<img src="../_img/indications.png" alt="indication" title="Un indice s'affiche sur votre écran" style="width:90%;" class="center"/>
+<style>
 
+.center{display:block;margin-left: auto;margin-right:auto;}
+
+</style>
