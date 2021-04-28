@@ -14,7 +14,7 @@ namespace m6d2_entity_migration
             using (var db = new MyDbContext())
             {
                 // Eviter les doublons
-                if (db.Personnes.Count() > 0)
+                if (db.Personnes.Count() == 0)
                 {
 
                     // Ajout de plusieurs personnes
@@ -25,12 +25,12 @@ namespace m6d2_entity_migration
                 }
 
                 // Eviter les doublons
-                if (db.Adresses.Count() > 0)
+                if (db.Adresses.Count() == 0)
                 {
                     // Ajout de plusieurs Adresses
-                    for (int i = 0; i < 8; i++)
+                    for (int i = 1; i < 10; i++)
                     {
-                        db.Adresses.Add(new Entities.Adresse() { Nom = "adr" + i, Numero = i });
+                        db.Adresses.Add(new Entities.Adresse() { Nom = "adr" + i, Numero = (i * 3) % 30 });
                     }
 
                     // Flush
@@ -52,7 +52,7 @@ namespace m6d2_entity_migration
                 var personnes = db.Personnes.Where(x => x.Id < 3).ToList();
                 foreach (var item in personnes)
                 {
-                    Console.WriteLine(item.ToString());
+                    Console.WriteLine(item);
                 }
             }
 

@@ -11,7 +11,7 @@ namespace m6d2_entity_migration.Entities
         public int Id { get; set; }
         public string Prenom { get; set; }
         public string Nom { get; set; }
-        public Adresse Adresse { get; set; }
+        public virtual Adresse Adresse { get; set; }
 
         public override string ToString()
         {
