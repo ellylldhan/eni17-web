@@ -23,6 +23,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "TP", "TP", "{51710795-0964-
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "m6d1-dbcontext", "m6d1-dbcontext\m6d1-dbcontext.csproj", "{ED63D986-538F-4812-9988-55C96B5AF4F0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "m6d2-entity-migration", "m6d2-entity-migration\m6d2-entity-migration.csproj", "{903D4268-4D69-4BBA-A892-2EC6B91A42C0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -61,6 +63,10 @@ Global
 		{ED63D986-538F-4812-9988-55C96B5AF4F0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ED63D986-538F-4812-9988-55C96B5AF4F0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{ED63D986-538F-4812-9988-55C96B5AF4F0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{903D4268-4D69-4BBA-A892-2EC6B91A42C0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{903D4268-4D69-4BBA-A892-2EC6B91A42C0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{903D4268-4D69-4BBA-A892-2EC6B91A42C0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{903D4268-4D69-4BBA-A892-2EC6B91A42C0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -74,6 +80,7 @@ Global
 		{86FDCF09-97F0-4EE8-90E9-53BF044508C7} = {51710795-0964-47A9-ABF6-2CECB81B7DBF}
 		{6F41A64E-2479-459B-94E5-5DBEA6435ACB} = {CFC81FB9-CDEF-4DF1-964A-F75C2074F1A7}
 		{ED63D986-538F-4812-9988-55C96B5AF4F0} = {CFC81FB9-CDEF-4DF1-964A-F75C2074F1A7}
+		{903D4268-4D69-4BBA-A892-2EC6B91A42C0} = {CFC81FB9-CDEF-4DF1-964A-F75C2074F1A7}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {B9BD2755-5AA6-4EE7-A873-ACC42CD2A613}
