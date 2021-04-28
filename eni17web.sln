@@ -25,6 +25,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "m6d1-dbcontext", "m6d1-dbco
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "m6d2-entity-migration", "m6d2-entity-migration\m6d2-entity-migration.csproj", "{903D4268-4D69-4BBA-A892-2EC6B91A42C0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "m6d3-crud", "m6d3-crud\m6d3-crud.csproj", "{26E65ED2-3122-489B-92CF-36A6D75D32C5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -67,6 +69,10 @@ Global
 		{903D4268-4D69-4BBA-A892-2EC6B91A42C0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{903D4268-4D69-4BBA-A892-2EC6B91A42C0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{903D4268-4D69-4BBA-A892-2EC6B91A42C0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{26E65ED2-3122-489B-92CF-36A6D75D32C5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{26E65ED2-3122-489B-92CF-36A6D75D32C5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{26E65ED2-3122-489B-92CF-36A6D75D32C5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{26E65ED2-3122-489B-92CF-36A6D75D32C5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -81,6 +87,7 @@ Global
 		{6F41A64E-2479-459B-94E5-5DBEA6435ACB} = {CFC81FB9-CDEF-4DF1-964A-F75C2074F1A7}
 		{ED63D986-538F-4812-9988-55C96B5AF4F0} = {CFC81FB9-CDEF-4DF1-964A-F75C2074F1A7}
 		{903D4268-4D69-4BBA-A892-2EC6B91A42C0} = {CFC81FB9-CDEF-4DF1-964A-F75C2074F1A7}
+		{26E65ED2-3122-489B-92CF-36A6D75D32C5} = {CFC81FB9-CDEF-4DF1-964A-F75C2074F1A7}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {B9BD2755-5AA6-4EE7-A873-ACC42CD2A613}
