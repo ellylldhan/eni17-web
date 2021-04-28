@@ -1,13 +1,13 @@
 ﻿@model IEnumerable<m6tp1_dojo.Models.Samourai>
 
 @{
-    ViewBag.Title = "Liste des Samouraïs";
+    ViewBag.Title = "Samouraïs | Liste";
 }
 
-<h2>Index</h2>
+<h2>Liste des Samouraïs</h2>
 
 <p>
-    @Html.ActionLink("Ajouter un nouveau samouraï", "Create")
+    @Html.ActionLink("Nouveau", "Create")
 </p>
 <table class="table">
     <tr>
@@ -16,6 +16,9 @@
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Force)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Arme)
         </th>
         <th></th>
     </tr>
@@ -28,6 +31,16 @@
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Force)
+            </td>
+            <td>
+                @if (item.Arme != null)
+                {
+                    @Html.DisplayFor(modelItem => item.Arme)
+                }
+                else
+                {
+                    @Html.Raw("Pas d'arme assignée")
+                }
             </td>
             <td>
                 @Html.ActionLink("Modifier", "Edit", new { id = item.Id }) |

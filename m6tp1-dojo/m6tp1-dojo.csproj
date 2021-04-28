@@ -140,6 +140,7 @@
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Arme.cs" />
     <Compile Include="Models\Samourai.cs" />
+    <Compile Include="Models\SamouraiViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -188,6 +189,7 @@
     <Content Include="Views\Samourais\Details.cshtml" />
     <Content Include="Views\Samourais\Edit.cshtml" />
     <Content Include="Views\Samourais\Index.cshtml" />
+    <Content Include="Views\Samourais\_SamouraiCreateEdit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
