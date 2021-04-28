@@ -7,11 +7,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "m4d1-routes", "m5d1-info-ct
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "m5d1-passer-infos", "m5d1-passer-infos\m5d1-passer-infos.csproj", "{5D4E9A70-1F22-40A2-9D85-720F83EB009A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "tp3-chats", "tp3-chats\tp3-chats.csproj", "{4EB12BAF-FB61-4549-978D-E4653ADA6FBF}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "m5tp1-chat", "tp3-chats\m5tp1-chat.csproj", "{4EB12BAF-FB61-4549-978D-E4653ADA6FBF}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "m5d2-partials", "m5d2-partials\m5d2-partials.csproj", "{0F96985E-9FC9-40AD-9666-686D5E477326}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "tp4-pizzas-v1", "tp4-pizzas-v1\tp4-pizzas-v1.csproj", "{AF692563-407D-4F83-83FE-367FDF6062C6}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "m5tp2-pizzas", "tp4-pizzas-v1\m5tp2-pizzas.csproj", "{AF692563-407D-4F83-83FE-367FDF6062C6}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PizzaClassLibrary", "PizzaClassLibrary\PizzaClassLibrary.csproj", "{86FDCF09-97F0-4EE8-90E9-53BF044508C7}"
 EndProject
@@ -26,6 +26,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "m6d2-entity-migration", "m6d2-entity-migration\m6d2-entity-migration.csproj", "{903D4268-4D69-4BBA-A892-2EC6B91A42C0}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "m6d3-crud", "m6d3-crud\m6d3-crud.csproj", "{26E65ED2-3122-489B-92CF-36A6D75D32C5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "m6tp1-dojo", "m6tp1-dojo\m6tp1-dojo.csproj", "{1D794AE4-D56D-421A-9EDF-17491C25ED75}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -73,6 +75,10 @@ Global
 		{26E65ED2-3122-489B-92CF-36A6D75D32C5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{26E65ED2-3122-489B-92CF-36A6D75D32C5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{26E65ED2-3122-489B-92CF-36A6D75D32C5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1D794AE4-D56D-421A-9EDF-17491C25ED75}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1D794AE4-D56D-421A-9EDF-17491C25ED75}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1D794AE4-D56D-421A-9EDF-17491C25ED75}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1D794AE4-D56D-421A-9EDF-17491C25ED75}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -88,6 +94,7 @@ Global
 		{ED63D986-538F-4812-9988-55C96B5AF4F0} = {CFC81FB9-CDEF-4DF1-964A-F75C2074F1A7}
 		{903D4268-4D69-4BBA-A892-2EC6B91A42C0} = {CFC81FB9-CDEF-4DF1-964A-F75C2074F1A7}
 		{26E65ED2-3122-489B-92CF-36A6D75D32C5} = {CFC81FB9-CDEF-4DF1-964A-F75C2074F1A7}
+		{1D794AE4-D56D-421A-9EDF-17491C25ED75} = {51710795-0964-47A9-ABF6-2CECB81B7DBF}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {B9BD2755-5AA6-4EE7-A873-ACC42CD2A613}
