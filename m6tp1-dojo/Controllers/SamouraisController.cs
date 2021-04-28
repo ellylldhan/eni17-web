@@ -54,6 +54,9 @@ namespace m6tp1_dojo.Controllers
         {
             if (ModelState.IsValid)
             {
+                // Correction (wtf?)
+                vm.Samourai.Arme = db.Armes.Find(vm.Samourai.Arme.Id);
+                
                 db.Samourais.Add(vm.Samourai);
                 db.SaveChanges();
                 return RedirectToAction("Index");
