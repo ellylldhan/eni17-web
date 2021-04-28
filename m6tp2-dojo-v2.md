@@ -35,9 +35,9 @@ public class ArtMartial
 - [ ] Afficher sur la page détails d'un samouraï son **potentiel** `(Force + dégats arme) * (nb d'arts martiaux + 1)`
 - [ ] Ajouter des annotations aux classes du `BO` et au `ViewModel` pour obtenir les vues suivantes
 
-<img src="img/m6tp2-1.png" alt="vues1" title="Details + Suppression" class="img center"/>
-<img src="img/m6tp2-2.png" alt="vues2" title="Creation + Modif" class="img center"/>
-<img src="img/m6tp2-3.png" alt="vues3" title="Liste" class="img center"/>
+<img src="../_img/m6tp2-1.png" alt="vues1" title="Details + Suppression" class="img center"/>
+<img src="../_img/m6tp2-2.png" alt="vues2" title="Creation + Modif" class="img center"/>
+<img src="../_img/m6tp2-3.png" alt="vues3" title="Liste" class="img center"/>
 
 
 ### Pour aller plus loin

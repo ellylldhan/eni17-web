@@ -36,16 +36,16 @@ Vous pouvez maintenant **créer les contrôleurs**, soit par vous-mêmes, soit e
 ### Vues
 **Liste des Samouraïs** :
 
-<img src="img/m6tp1-1.png" alt="samouraïs" title="Liste Samouraïs" style="width: 75%;margin:0 auto;border:2px solid black" class="center"/>
+<img src="../_img/m6tp1-1.png" alt="samouraïs" title="Liste Samouraïs" style="width: 75%;margin:0 auto;border:2px solid black" class="center"/>
 
 **Liste des Armes** :
 
-<img src="img/m6tp1-2.png" alt="armes" title="Liste Armes" style="width:75%;border:2px solid black" class="center"/>
+<img src="../_img/m6tp1-2.png" alt="armes" title="Liste Armes" style="width:75%;border:2px solid black" class="center"/>
 
 
 ### Aide du formateur
 
-<img src="img/indications.png" alt="indication" title="Un indice s'affiche sur votre écran" style="width:90%;" class="center"/>
+<img src="../_img/indications.png" alt="indication" title="Un indice s'affiche sur votre écran" style="width:90%;" class="center"/>
 
 
 <style>
