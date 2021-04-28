@@ -1,13 +1,13 @@
 ﻿@model IEnumerable<m6tp1_dojo.Models.Samourai>
 
 @{
-    ViewBag.Title = "Samouraïs | Liste";
+    ViewBag.Title = "Dojo | Liste Samouraïs";
 }
 
 <h2>Liste des Samouraïs</h2>
 
 <p>
-    @Html.ActionLink("Nouveau", "Create")
+    @Html.ActionLink("Créer un nouveau samouraÏ", "Create")
 </p>
 <table class="table">
     <tr>
@@ -35,7 +35,7 @@
             <td>
                 @if (item.Arme != null)
                 {
-                    @Html.DisplayFor(modelItem => item.Arme)
+                    @Html.DisplayFor(modelItem => item.Arme.Nom)
                 }
                 else
                 {

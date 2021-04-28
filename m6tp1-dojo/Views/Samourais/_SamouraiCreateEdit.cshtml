@@ -1,5 +1,6 @@
 ﻿@model m6tp1_dojo.Models.SamouraiViewModel
 
+<!--Nom Samourai-->
 <div class="form-group">
     @Html.LabelFor(model => model.Samourai.Nom, htmlAttributes: new { @class = "control-label col-md-2" })
     <div class="col-md-10">
@@ -8,14 +9,16 @@
     </div>
 </div>
 
+<!--Arme Samourai-->
 <div class="form-group">
-    @Html.LabelFor(model => model.Samourai.Arme, htmlAttributes: new { @class = "control-label col-md-2" })
+    @Html.LabelFor(model => model.Samourai.Arme.Id, htmlAttributes: new { @class = "control-label col-md-2" })
     <div class="col-md-10">
         @Html.DropDownListFor(model => model.Samourai.Arme.Id, Model.Armes.Select(x => new SelectListItem() { Text = x.Nom, Value = x.Id.ToString() }), "Choisir une arme")
         @Html.ValidationMessageFor(model => model.Samourai.Arme.Id, "", new { @class = "text-danger" })
     </div>
 </div>
 
+<!--Force Samourai-->
 @Html.ValidationSummary(true, "", new { @class = "text-danger" })
 <div class="form-group">
     @Html.LabelFor(model => model.Samourai.Force, htmlAttributes: new { @class = "control-label col-md-2" })

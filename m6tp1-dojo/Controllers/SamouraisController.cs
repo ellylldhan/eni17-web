@@ -39,7 +39,10 @@ namespace m6tp1_dojo.Controllers
         // GET: Samourais/Create
         public ActionResult Create()
         {
-            return View();
+            SamouraiViewModel vm = new SamouraiViewModel();
+            vm.Armes = db.Armes.ToList();
+
+            return View(vm);
         }
 
         // POST: Samourais/Create
@@ -47,16 +50,19 @@ namespace m6tp1_dojo.Controllers
         // plus de détails, consultez https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Force,Nom")] Samourai samourai)
+        public ActionResult Create(SamouraiViewModel vm)
         {
             if (ModelState.IsValid)
             {
-                db.Samourais.Add(samourai);
+                db.Samourais.Add(vm.Samourai);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(samourai);
+            // Récup de la liste des armes
+            vm.Armes = db.Armes.ToList();
+
+            return View(vm);
         }
 
         // GET: Samourais/Edit/5
