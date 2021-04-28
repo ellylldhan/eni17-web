@@ -12,17 +12,17 @@ Il faudra donc **créer** et **modifier** des samouraïs, **leur associer** une 
 
 ### Enoncé
 
-- [ ] Créer un site web ASP.Net MVC sans authentification
-- [ ] Ajouter à la solution le projet `BO` fourni
-- [ ] Ajouter la référence du site web vers le BO
-- [ ] Générer la solution
+- [x] Créer un site web ASP.Net MVC sans authentification
+- [x] Ajouter à la solution le projet `BO` fourni
+- [x] Ajouter la référence du site web vers le BO
+- [x] Générer la solution
 
 Vous pouvez maintenant **créer les contrôleurs**, soit par vous-mêmes, soit en utilisant le wizard de Visual Studio.
 
-- [ ] Créer un contrôleur CRUD avec action lecture/écriture utilisant EF6 pour la classe `Samourai`
-- [ ] Créer un contrôleur CRUD avec action lecture/écriture utilisant EF6 pour la classe `Arme`
-- [ ] Passer le projet en migration manuelle
-- [ ] Ajouter votre première migration et mettre à jour la bdd
+- [x] Créer un contrôleur CRUD avec action lecture/écriture utilisant EF6 pour la classe `Samourai`
+- [x] Créer un contrôleur CRUD avec action lecture/écriture utilisant EF6 pour la classe `Arme`
+- [x] Passer le projet en migration manuelle
+- [x] Ajouter votre première migration et mettre à jour la bdd
 
 #### Partie Samouraï
 - [ ] Modifier les vues afin de pouvoir choisir une arme sur le samouraï en création et en modification
@@ -34,6 +34,14 @@ Vous pouvez maintenant **créer les contrôleurs**, soit par vous-mêmes, soit e
 - [ ] Créer et modifier des samouraïs en associant ou non des armes et vérifier que tout fonctionne correctement.
 
 ### Vues
+
+<style>
+
+.center{display:block;margin-left: auto;margin-right:auto;}
+
+</style>
+
+
 **Liste des Samouraïs** :
 
 <img src="../_img/m6tp1-1.png" alt="samouraïs" title="Liste Samouraïs" style="width: 75%;margin:0 auto;border:2px solid black" class="center"/>
@@ -47,11 +55,3 @@ Vous pouvez maintenant **créer les contrôleurs**, soit par vous-mêmes, soit e
 
 <img src="../_img/indications.png" alt="indication" title="Un indice s'affiche sur votre écran" style="width:90%;" class="center"/>
 
-
-<style>
-.center {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-}
-</style>
