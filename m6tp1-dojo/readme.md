@@ -31,7 +31,7 @@ Vous pouvez maintenant **créer les contrôleurs**, soit par vous-mêmes, soit e
 - [x] Ajouter des liens dans le fichier `_layout` pour afficher la liste des armes et la liste des samouraïs.
 - [x] Créer un jeu de données pour les armes en passant par le site
 - [x] Modifier le code de suppression d'une arme pour gérer le cas d'une arme associée à un samouraï.
-- [ ] Créer et modifier des samouraïs en associant ou non des armes et vérifier que tout fonctionne correctement.
+- [x] Créer et modifier des samouraïs en associant ou non des armes et vérifier que tout fonctionne correctement.
 
 ### Vues
 

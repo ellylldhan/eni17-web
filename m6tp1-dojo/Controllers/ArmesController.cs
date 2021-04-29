@@ -127,7 +127,7 @@ namespace m6tp1_dojo.Controllers
                 //return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
 
                 // Méthode du prof (correction)
-                ModelState.AddModelError("erros", "Impossible de supprimer une arme appartenant à un samouraï.");
+                ModelState.AddModelError("errors", "Impossible de supprimer une arme appartenant à un samouraï.");
                 return View(arme);
             }
         }
