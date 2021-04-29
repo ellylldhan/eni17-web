@@ -54,7 +54,7 @@ namespace m6tp1_dojo.Controllers
         {
             if (ModelState.IsValid)
             {
-                // Correction (wtf?)
+                // Correction
                 vm.Samourai.Arme = db.Armes.Find(vm.Samourai.Arme.Id);
                 
                 db.Samourais.Add(vm.Samourai);
@@ -94,17 +94,21 @@ namespace m6tp1_dojo.Controllers
         // plus de détails, consultez https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(SamouraiViewModel sm)
+        public ActionResult Edit(SamouraiViewModel vm)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(sm.Samourai).State = EntityState.Modified;
+                // Récup Arme par ID + affection à SAM
+                vm.Samourai.Arme = db.Armes.Find(vm.Samourai.Arme.Id);
+
+                db.Entry(vm.Samourai).State = EntityState.Modified;
                 db.SaveChanges();
+                vm.Armes = db.Armes.ToList();
                 return RedirectToAction("Index");
             }
 
-            sm.Armes = db.Armes.ToList();
-            return View(sm);
+            vm.Armes = db.Armes.ToList();
+            return View(vm);
         }
 
         // GET: Samourais/Delete/5
