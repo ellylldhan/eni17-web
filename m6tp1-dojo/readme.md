@@ -22,7 +22,7 @@ public class ArtMartial
 
 - [x] **\[m6tp2-A02\]** Factoriser votre BO grâce à l'héritage, définir une classe abstraite portant l'id, propriété commune de toutes les classes de votre BO.
 
-- [ ] **\[m6tp2-B01\]** Un samouraï possède désormais une liste d'arts martiaux.
+- [x] **\[m6tp2-B01\]** Un samouraï possède désormais une liste d'arts martiaux.
 - [ ] **\[m6tp2-B02\]** Désormais une `Arme` ne peut appartenir qu'à un seul samouraï.
 - [ ] **\[m6tp2-B03\]** On ne peut plus supprimer une arme liée à un samouraï. Elle doit être détachée du samouraï au préalable sur la page de modification du dit samouraï
 - [ ] **\[m6tp2-B04\]** Un art martial peut être associé à zéro ou plusieurs samouraïs
