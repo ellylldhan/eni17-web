@@ -27,9 +27,12 @@ public class ArtMartial
 - [x] On ne peut plus supprimer une arme liée à un samouraï. Elle doit être détachée du samouraï au préalable sur la page de modification du dit samouraï
 - [x] Un art martial peut être associé à zéro ou plusieurs samouraïs
 
-- [x] Une fois le BO et Context modifié pour représenter ces changements, faire une nouvelle migration et mettre la base à jour. En cas de problème, ne pas hésiter à supprimer la bdd et la migration initiale afin de régénérer une unique migration portant tous les changements).
+- [x] Une fois le BO et Context modifié pour représenter ces changements, faire une nouvelle migration et mettre la base à jour. 
+En cas de problème, ne pas hésiter à supprimer la bdd et la migration initiale afin de régénérer une unique migration portant tous les changements.
 - [x] Ajouter un contrôleur CRUD pour `ArtMartial`, avec toutes les vues nécessaires.
 - [ ] Modifier les vues et le contrôleur pour `Samourai` afin de prendre en compte les nouvelles règles.
+	+ [ ] modif vues
+	+ [ ] modif ctlr
 - [ ] La liste des armes proposées en ajout/modification d'un samouraï ne contient que les armes disponible, c-à-d non attachées à un samouraï.
 - [ ] Qd on supprime un samouraï, son arme est détachée. Elle devient disponible pour les autres samouraïs.
 - [ ] Afficher sur la page détails d'un samouraï son **potentiel** `(Force + dégats arme) * (nb d'arts martiaux + 1)`
