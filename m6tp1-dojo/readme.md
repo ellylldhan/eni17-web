@@ -1,56 +1,64 @@
-# TP - Dojo - Partie 1
-Module 6 TP 1 (tp6) - Entity Framework
+# TP - Dojo - Partie 2
+*Module 6 TP 2 (tp7) - Entity Framework*
 
-*Durée : **2-4h***
+Durée : **3-5h**
 
 ### Objectifs
-Le but de ce TP est de réaliser un site web ASP.Net MVC utilisant l'ORM Entity Framework 6 pour la **persiostance des données**.
+Le but de ce TP est de finaliser le site *Dojo* en utilisant toutes les connaissances accumulées lors de ce cours.
 
-Ce site, appelé *Dojo*, recense les divers samouraïs d'un dojo ainsi que les armes qu'ils utilisent dans la pratique de leurs arts martiaux. 
+Pour ce TP, partir de la correction du TP précédent (*m6tp1-dojo-v1*).
 
-Il faudra donc **créer** et **modifier** des samouraïs, **leur associer** une arme et les **enlever** du dojo.
 
 ### Enoncé
 
-- [x] Créer un site web ASP.Net MVC sans authentification
-- [x] Ajouter à la solution le projet `BO` fourni
-- [x] Ajouter la référence du site web vers le BO
-- [x] Générer la solution
+- [ ] **\[m6tp2-001\]** Ajouter une nouvelle classe dans votre BO, nommée `ArtMartial`
+```csharp
+public class ArtMartial
+{
+	public int Id { get; set; }
+	public string Nom { get; set; }
+}
+```
 
-Vous pouvez maintenant **créer les contrôleurs**, soit par vous-mêmes, soit en utilisant le wizard de Visual Studio.
+- [ ] **\[m6tp2-A01\]** Factoriser votre BO grâce à l'héritage, définir une classe abstraite portant l'id, propriété commune de toutes les classes de votre BO.
 
-- [x] Créer un contrôleur CRUD avec action lecture/écriture utilisant EF6 pour la classe `Samourai`
-- [x] Créer un contrôleur CRUD avec action lecture/écriture utilisant EF6 pour la classe `Arme`
-- [x] Passer le projet en migration manuelle
-- [x] Ajouter votre première migration et mettre à jour la bdd
+- [ ] **\[m6tp2-B02\]** Un samouraï possède désormais une liste d'arts martiaux.
+- [ ] **\[m6tp2-B03\]** Désormais une `Arme` ne peut appartenir qu'à un seul samouraï.
+- [ ] **\[m6tp2-B04\]** On ne peut plus supprimer une arme liée à un samouraï. Elle doit être détachée du samouraï au préalable sur la page de modification du dit samouraï
+- [ ] **\[m6tp2-B05\]** Un art martial peut être associé à zéro ou plusieurs samouraïs
 
-#### Partie Samouraï
-- [x] Modifier les vues afin de pouvoir choisir une arme sur le samouraï en création et en modification
-- [x] Modifier les vues pour afficher l'arme du samouraï sur l'affichage `list`, `details` et `delete`. Un Samouraï n'a pas obligatoirement une arme.
-- [x] Modifier le code nécessaire dans `SamouraiController` pour prendre en compte l'ajout ou la modification de l'arme sur un samouraï.
-- [x] Ajouter des liens dans le fichier `_layout` pour afficher la liste des armes et la liste des samouraïs.
-- [x] Créer un jeu de données pour les armes en passant par le site
-- [x] Modifier le code de suppression d'une arme pour gérer le cas d'une arme associée à un samouraï.
-- [x] Créer et modifier des samouraïs en associant ou non des armes et vérifier que tout fonctionne correctement.
+- [ ] **\[m6tp2-C06\]** Une fois le BO et Context modifié pour représenter ces changements, faire une nouvelle migration et mettre la base à jour. En cas de problème, ne pas hésiter à supprimer la bdd et la migration initiale afin de régénérer une unique migration portant tous les changements).
+- [ ] **\[m6tp2-C07\]** Ajouter un contrôleur CRUD pour `ArtMartial`, avec toutes les vues nécessaires.
+- [ ] **\[m6tp2-C08\]** Modifier les vues et le contrôleur pour `Samourai` afin de prendre en compte les nouvelles règles.
+- [ ] **\[m6tp2-C09\]** La liste des armes proposées en ajout/modification d'un samouraï ne contient que les armes disponible, c-à-d non attachées à un samouraï.
+- [ ] **\[m6tp2-C10\]** Qd on supprime un samouraï, son arme est détachée. Elle devient disponible pour les autres samouraïs.
+- [ ] **\[m6tp2-C11\]** Afficher sur la page détails d'un samouraï son **potentiel** `(Force + dégats arme) * (nb d'arts martiaux + 1)`
+- [ ] **\[m6tp2-C12\]** Ajouter des annotations aux classes du `BO` et au `ViewModel` pour obtenir les vues suivantes
 
-### Vues
+<img src="../_img/m6tp2-1.png" alt="vues1" title="Details + Suppression" class="img center"/>
+<img src="../_img/m6tp2-2.png" alt="vues2" title="Creation + Modif" class="img center"/>
+<img src="../_img/m6tp2-3.png" alt="vues3" title="Liste" class="img center"/>
 
-**Liste des Samouraïs** :
 
-<img src="../_img/m6tp1-1.png" alt="samouraïs" title="Liste Samouraïs" style="width: 75%;margin:0 auto;border:2px solid black" class="center"/>
+### Pour aller plus loin
 
-**Liste des Armes** :
-
-<img src="../_img/m6tp1-2.png" alt="armes" title="Liste Armes" style="width:75%;border:2px solid black" class="center"/>
+- [ ] **\[m6tp2-D13\]** Factoriser les vues `Edit` et `Create` du contrôleur `ArtMartial`, modifier les méthodes dudit contrôleur pour refléter les changements.
+- [ ] **\[m6tp2-D14\]** Modifier toutes les vues du contrôleur `ArtMartial` pour afficher les libellés en français avec la ponctuation adéquate.
+- [ ] **\[m6tp2-D15\]** Créer des méthodes d'extension sur la classe `HtmlHelper` pour factoriser le code de toutes les vues.
 
 
 
 <style>
 
+.img {
+	border: 2px solid black;
+	width: 80%;
+}
+
 .center {
-	display:block;
-	margin-left: auto;
-	margin-right:auto;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 </style>
