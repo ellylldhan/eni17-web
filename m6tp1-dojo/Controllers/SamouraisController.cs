@@ -80,7 +80,13 @@ namespace m6tp1_dojo.Controllers
             {
                 return HttpNotFound();
             }
-            return View(samourai);
+
+            // Recup le view model pour le passer à la vue
+            SamouraiViewModel sm = new SamouraiViewModel();
+            sm.Armes = db.Armes.ToList();
+            sm.Samourai = samourai;
+
+            return View(sm);
         }
 
         // POST: Samourais/Edit/5
@@ -88,15 +94,17 @@ namespace m6tp1_dojo.Controllers
         // plus de détails, consultez https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Force,Nom")] Samourai samourai)
+        public ActionResult Edit(SamouraiViewModel sm)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(samourai).State = EntityState.Modified;
+                db.Entry(sm.Samourai).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(samourai);
+
+            sm.Armes = db.Armes.ToList();
+            return View(sm);
         }
 
         // GET: Samourais/Delete/5

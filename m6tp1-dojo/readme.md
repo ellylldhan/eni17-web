@@ -37,8 +37,6 @@ Vous pouvez maintenant **créer les contrôleurs**, soit par vous-mêmes, soit e
 
 ### Vues
 
-
-
 **Liste des Samouraïs** :
 
 <img src="../_img/m6tp1-1.png" alt="samouraïs" title="Liste Samouraïs" style="width: 75%;margin:0 auto;border:2px solid black" class="center"/>
@@ -51,6 +49,10 @@ Vous pouvez maintenant **créer les contrôleurs**, soit par vous-mêmes, soit e
 
 <style>
 
-.center{display:block;margin-left: auto;margin-right:auto;}
+.center {
+	display:block;
+	margin-left: auto;
+	margin-right:auto;
+}
 
 </style>
