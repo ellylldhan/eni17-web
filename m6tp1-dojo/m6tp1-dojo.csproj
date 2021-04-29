@@ -139,6 +139,8 @@
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Arme.cs" />
+    <Compile Include="Models\ArtMartial.cs" />
+    <Compile Include="Models\Entity.cs" />
     <Compile Include="Models\Samourai.cs" />
     <Compile Include="Models\SamouraiViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

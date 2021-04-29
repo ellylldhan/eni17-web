@@ -22,5 +22,6 @@ namespace m6tp1_dojo.Data
         public System.Data.Entity.DbSet<m6tp1_dojo.Models.Arme> Armes { get; set; }
 
         public System.Data.Entity.DbSet<m6tp1_dojo.Models.Samourai> Samourais { get; set; }
+        public System.Data.Entity.DbSet<m6tp1_dojo.Models.ArtMartial> ArtsMartiaux { get; set; }
     }
 }
