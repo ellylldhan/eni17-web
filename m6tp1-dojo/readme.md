@@ -20,7 +20,7 @@ public class ArtMartial
 }
 ```
 
-- [ ] **\[m6tp2-A01\]** Factoriser votre BO grâce à l'héritage, définir une classe abstraite portant l'id, propriété commune de toutes les classes de votre BO.
+- [x] **\[m6tp2-A01\]** Factoriser votre BO grâce à l'héritage, définir une classe abstraite portant l'id, propriété commune de toutes les classes de votre BO.
 
 - [ ] **\[m6tp2-B02\]** Un samouraï possède désormais une liste d'arts martiaux.
 - [ ] **\[m6tp2-B03\]** Désormais une `Arme` ne peut appartenir qu'à un seul samouraï.
