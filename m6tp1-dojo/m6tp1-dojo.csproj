@@ -135,13 +135,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202104281328493_Initial.cs" />
-    <Compile Include="Migrations\202104281328493_Initial.Designer.cs">
-      <DependentUpon>202104281328493_Initial.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202104292159038_ArtMartial.cs" />
-    <Compile Include="Migrations\202104292159038_ArtMartial.designer.cs">
-      <DependentUpon>202104292159038_ArtMartial.cs</DependentUpon>
+    <Compile Include="Migrations\202104292252129_Initial.cs" />
+    <Compile Include="Migrations\202104292252129_Initial.designer.cs">
+      <DependentUpon>202104292252129_Initial.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Arme.cs" />
@@ -222,11 +218,8 @@
     <Content Include="Scripts\jquery-3.4.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202104281328493_Initial.resx">
-      <DependentUpon>202104281328493_Initial.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202104292159038_ArtMartial.resx">
-      <DependentUpon>202104292159038_ArtMartial.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202104292252129_Initial.resx">
+      <DependentUpon>202104292252129_Initial.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
