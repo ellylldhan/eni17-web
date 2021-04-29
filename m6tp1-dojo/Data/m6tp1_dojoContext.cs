@@ -22,12 +22,11 @@ namespace m6tp1_dojo.Data
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
-            modelBuilder.Entity<m6tp1_dojo.Models.Samourai>().HasOptional(x => x.Arme);
+            modelBuilder.Entity<m6tp1_dojo.Models.Samourai>().HasOptional(x => x.Arme).WithOptionalPrincipal();
             modelBuilder.Entity<m6tp1_dojo.Models.Samourai>().HasMany(x => x.ArtsMartiaux).WithMany();
         }
 
         public System.Data.Entity.DbSet<m6tp1_dojo.Models.Arme> Armes { get; set; }
-
         public System.Data.Entity.DbSet<m6tp1_dojo.Models.Samourai> Samourais { get; set; }
         public System.Data.Entity.DbSet<m6tp1_dojo.Models.ArtMartial> ArtsMartiaux { get; set; }
     }
