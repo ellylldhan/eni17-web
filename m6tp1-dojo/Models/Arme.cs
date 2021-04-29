@@ -10,5 +10,10 @@ namespace m6tp1_dojo.Models
         public int Id { get; set; }
         public string Nom { get; set; }
         public int Degats { get; set; }
+
+        public override string ToString()
+        {
+            return $"{Nom} (dégats: {Degats})";
+        }
     }
 }
