@@ -5,9 +5,9 @@ using System.Web;
 
 namespace m6tp1_dojo.Models
 {
-    public class Arme
+    public class Arme: Entity
     {
-        public int Id { get; set; }
+        // public int Id { get; set; }
         public string Nom { get; set; }
         public int Degats { get; set; }
 
