@@ -28,6 +28,8 @@ Vous pouvez maintenant **créer les contrôleurs**, soit par vous-mêmes, soit e
 - [x] Modifier les vues afin de pouvoir choisir une arme sur le samouraï en création et en modification
 - [x] Modifier les vues pour afficher l'arme du samouraï sur l'affichage `list`, `details` et `delete`. Un Samouraï n'a pas obligatoirement une arme.
 - [ ] Modifier le code nécessaire dans `SamouraiController` pour prendre en compte l'ajout ou la modification de l'arme sur un samouraï.
+	+ [ ] ajout arme sur samourai
+	+ [ ] modif arme sur samourai
 - [x] Ajouter des liens dans le fichier `_layout` pour afficher la liste des armes et la liste des samouraïs.
 - [x] Créer un jeu de données pour les armes en passant par le site
 - [ ] Modifier le code de suppression d'une arme pour gérer le cas d'une arme associée à un samouraï.
