@@ -56,7 +56,7 @@ namespace m6tp1_dojo.Controllers
             {
                 // Correction
                 vm.Samourai.Arme = db.Armes.Find(vm.Samourai.Arme.Id);
-                
+
                 db.Samourais.Add(vm.Samourai);
                 db.SaveChanges();
                 return RedirectToAction("Index");
@@ -98,12 +98,24 @@ namespace m6tp1_dojo.Controllers
         {
             if (ModelState.IsValid)
             {
-                // Récup Arme par ID + affection à SAM
-                vm.Samourai.Arme = db.Armes.Find(vm.Samourai.Arme.Id);
+                // Remplacer arme precedente par nouvelle (CORRECTION)
+                // Note: on a besoin que l'objet (Samourai) soit chargé au préalable 
+                // pour pouvoir changer les infos (Arme) qui lui sont liées. 
+                // 1. charge samourai depuis contexte de données
+                Samourai samourai = db.Samourais.Find(vm.Samourai.Id);
+                samourai.Nom = vm.Samourai.Nom;
+                samourai.Force = vm.Samourai.Force;
+                samourai.Arme = db.Armes.Find(vm.Samourai.Arme.Id);
 
-                db.Entry(vm.Samourai).State = EntityState.Modified;
+                //2. utilise ce samourai pour màj
+                db.Entry(samourai).State = EntityState.Modified;
                 db.SaveChanges();
-                vm.Armes = db.Armes.ToList();
+
+                // Récup Arme par ID + affection à SAMOURAI
+                //vm.Samourai.Arme = db.Armes.Find(vm.Samourai.Arme.Id);
+                //db.Entry(vm.Samourai).State = EntityState.Modified;
+                //db.SaveChanges();
+
                 return RedirectToAction("Index");
             }
 
