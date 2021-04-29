@@ -30,7 +30,7 @@ Vous pouvez maintenant **créer les contrôleurs**, soit par vous-mêmes, soit e
 - [x] Modifier le code nécessaire dans `SamouraiController` pour prendre en compte l'ajout ou la modification de l'arme sur un samouraï.
 - [x] Ajouter des liens dans le fichier `_layout` pour afficher la liste des armes et la liste des samouraïs.
 - [x] Créer un jeu de données pour les armes en passant par le site
-- [ ] Modifier le code de suppression d'une arme pour gérer le cas d'une arme associée à un samouraï.
+- [x] Modifier le code de suppression d'une arme pour gérer le cas d'une arme associée à un samouraï.
 - [ ] Créer et modifier des samouraïs en associant ou non des armes et vérifier que tout fonctionne correctement.
 
 ### Vues

@@ -111,9 +111,25 @@ namespace m6tp1_dojo.Controllers
         public ActionResult DeleteConfirmed(int id)
         {
             Arme arme = db.Armes.Find(id);
-            db.Armes.Remove(arme);
-            db.SaveChanges();
-            return RedirectToAction("Index");
+
+            // Check si un sam est attaché à l'arme, si oui on refuse
+            Boolean isAttached = db.Samourais.Select(x => x).Where(x => x.Arme.Id == id).Any();
+
+            if (!isAttached)
+            {
+                db.Armes.Remove(arme);
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            else
+            {
+                // Méthode de brutasse (envoi sur page ERROR 400)
+                //return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+
+                // Méthode du prof (correction)
+                ModelState.AddModelError("erros", "Impossible de supprimer une arme appartenant à un samouraï.");
+                return View(arme);
+            }
         }
 
         protected override void Dispose(bool disposing)
