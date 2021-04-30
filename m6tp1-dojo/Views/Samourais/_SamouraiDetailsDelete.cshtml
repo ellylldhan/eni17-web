@@ -39,5 +39,24 @@
             @Html.Raw("Aucune arme")
         </dd>
     }
+
+    <!--Liste Arts Martiaux-->
+    <dt>
+        @Html.DisplayNameFor(model => model.ArtsMartiaux)
+    </dt>
+    <dd>
+        @if (Model.ArtsMartiaux != null)
+        {
+            foreach (var item in Model.ArtsMartiaux)
+            {
+                @Html.DisplayFor(model => item.Nom)
+                <br/>
+            }
+        }
+        else
+        {
+            @Html.Raw("Aucun art martial")
+        }
+    </dd>
 </dl>
 
