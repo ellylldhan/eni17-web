@@ -46,7 +46,7 @@
         }
     </td>
     <td>
-        @if (item.ArtsMartiaux != null)
+        @if (item.ArtsMartiaux != null && item.ArtsMartiaux.Count > 0 )
         {
             foreach (var art in item.ArtsMartiaux)
             {

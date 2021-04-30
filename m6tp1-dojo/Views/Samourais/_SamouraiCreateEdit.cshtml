@@ -33,7 +33,14 @@
 <div class="form-group">
     @Html.LabelFor(model => model.Samourai.ArtsMartiaux, htmlAttributes: new { @class = "control-label col-md-2" })
     <div class="col-md-10">
-        @Html.ListBoxFor(model => model.ArtsMartiauxIds, Model.ArtsMartiaux.Select(x=>new SelectListItem() { Text = x.Nom, Value = x.Id.ToString() }), "Choisir une ou plusieurs disciplines")
+        @*
+        @Html.ListBoxFor(model => model.ArtsMartiauxIds,
+            Model.ArtsMartiaux.Select(x =>
+                new SelectListItem() { Text = x.Nom, Value = x.Id.ToString() })
+            , "Choisir une ou plusieurs disciplines")
+        *@
+
         @Html.ValidationMessageFor(model => model.ArtsMartiauxIds, "", new { @class = "text-danger" })
+
     </div>
 </div>
